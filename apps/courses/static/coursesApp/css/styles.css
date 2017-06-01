@@ -1,0 +1,19 @@
+h1 {
+	margin-bottom: 25px;
+	color: #0054AF;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 900;
+	font-size: 3em;
+}
+.sub-btn {
+	margin-left: 31px;
+}
+.form-style {
+	margin-bottom: 20px;
+}
+.red {
+	color: #C60003;
+}
+.del-btn {
+	margin: 10px 10px 0 0;
+}

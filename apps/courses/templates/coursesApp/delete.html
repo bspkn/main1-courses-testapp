@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% load staticfiles %}
+		<title>Courses</title>
+		<meta charset="utf-8">
+		<meta name="#" content="#">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- jQuery compiled and minified v3.2.1 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600" rel="stylesheet">
+		<!-- Main styles -->
+		<link rel="stylesheet" href="{% static 'coursesApp/css/styles.css' %}">
+		</head>
+	<body>
+		<div class="container">
+			<section class="row">
+				<div class="col-lg-8">
+					<h1>Are you sure you want to delete the following course?</h1>
+					<p><strong>Name:</strong> {{courses.course}}</p>
+					<p><strong>Description:</strong> {{courses.description}}</p>
+					<form action="{% url 'courses:delete' courses.id %}" method="post">
+						{% csrf_token %}
+						<section class="form-group">
+							<button type="submit" name="delete" value="no" class="btn btn-sm btn-default del-btn">No, go back</button>
+							<button type="submit" name="delete" value="yes" class="btn btn-sm btn-danger del-btn">Yes, delete</button>
+						</section>
+					</form>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>
